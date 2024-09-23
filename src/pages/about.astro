@@ -1,4 +1,6 @@
 ---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
 import '../styles/global.css'
 const pageTitle: string = "About Me";
 interface Iidentity {
@@ -52,9 +54,7 @@ const textCase = "uppercase";
         </style>
     </head>
     <body>
-        <a href="/">Home</a>
-        <a href="/about">About</a>
-        <a href="/blog">Blog</a>
+        <Header />
         <h1>{pageTitle}</h1>
         <h2>Who am I?</h2>
         <p>I'm {identity.firstName}, welcome to my developer Blog.</p>
@@ -89,5 +89,6 @@ const textCase = "uppercase";
                 <p>My goal is not 3 days.</p>
             )
         }
+    <Footer />
     </body>
 </html>
