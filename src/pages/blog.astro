@@ -8,13 +8,16 @@ const pageTitle: string = "Some posts 📓";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-    <h2>Let's share something</h2>
-    <p>Here you can read all my posts:</p>
-    <ul>
-        {
-            allPosts.map((post) => (
-                <BlogPost title={post.frontmatter.title} url={post.url} />
-            ))
-        }
-    </ul>
+    <section class="section">
+        <h2>Let's share something</h2>
+        <p>List of posts:</p>
+        <!-- TODO: CREATE A POST CARD COMPONENT -->
+        <ul>
+            {
+                allPosts.map((post) => (
+                    <BlogPost title={post.frontmatter.title} url={post.url} />
+                ))
+            }
+        </ul>
+    </section>
 </BaseLayout>

@@ -1,0 +1,26 @@
+.section {
+    padding: 1rem;
+}
+/* TAG COMPONENT */
+.tags {
+    padding-top: .4rem;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.tag {
+    background-color: #ff8906;
+    font-size: 1.15em;
+    margin: 0.25em;
+    padding: 0.5em 1em;
+    border: solid 1px #fffffe;
+    border-radius: 0.5em;
+    transition: all 0.2s ease-in-out;
+}
+.tag a {
+    color: #fffffe;
+}
+
+.tag:hover {
+    background-color: #cc6f05;
+}

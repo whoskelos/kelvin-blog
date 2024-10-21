@@ -1,19 +1,15 @@
 ---
 import Social from "../components/Social.astro";
+import "../styles/footer.css";
 ---
 
-<style>
-    footer {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 1rem;
-        margin-top: 2rem;
-    }
-</style>
-
 <footer>
-    <Social platform="instagram" username="codebykelos" />
-    <Social platform="youtube" username="@codebykelos" />
-    <Social platform="tiktok" username="codebykelos" />
-    <Social platform="github" username="whoskelos" />
+    <hr />
+    <p>RRSS</p>
+    <nav>
+        <Social platform="instagram" username="codebykelos" />
+        <Social platform="youtube" username="@codebykelos" />
+        <Social platform="tiktok" username="codebykelos" />
+        <Social platform="github" username="whoskelos" />
+    </nav>
 </footer>

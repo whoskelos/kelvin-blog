@@ -1,12 +1,10 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import Greeting from "../components/Greeting";
-
 const pageTitle: string = "Welcome 👋🏼";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-    <section>
+    <section class="section">
         <h2>What is this?</h2>
         <p>I decided to create this blog to keep learning about astro, I really love this web framework.</p>
         <p>Antoher reason is because I want to practice my english writing and I think this is a good way to practice, so... guys feel free to correct me please.</p>
@@ -14,9 +12,3 @@ const pageTitle: string = "Welcome 👋🏼";
         <p>I dont know How you get here, so... Welcome to my Blog ❤️</p>
     </section>
 </BaseLayout>
-
-<style>
-    section {
-        padding: 1rem;
-    }
-</style>

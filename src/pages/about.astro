@@ -28,45 +28,46 @@ const happy = true;
 const finished = true;
 const goal = 3;
 
-const skillColor = "navy";
+const skillColor = "#e53170";
 const fontWeight = "bold";
 const textCase = "uppercase";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-    <h2>Who am I?</h2>
-    <p>I'm {identity.firstName}, welcome to my developer Blog.</p>
-    <p>I live in {identity.country}</p>
-    <p>
-        I'm a Frontend Developer, actually I'm working with Javascript Vanilla
-        at <i>Idealista</i> (Software Development Company).
-    </p>
-    <ul>
+    <section class="section">
+        <h2>Who am I?</h2>
+        <p>I'm {identity.firstName}</p>
+        <p>I born in Ecuador but I live in {identity.country} since 2008</p>
+        <p>
+            I work as a Frontend Developer at <i>Idealista</i>.
+        </p>
+        <ul>
+            {
+                identity.hobbies.length >= 2 && (
+                    <li>
+                        Two of my hobbies are: {identity.hobbies[0]} and{" "}
+                        {identity.hobbies[1]}
+                    </li>
+                )
+            }
+        </ul>
+        <p>My skills are:</p>
+        <ul>
+            {skills.map((skill) => <li class="skill">{skill}</li>)}
+        </ul>
+
+        {happy && <p>I am happy to be learning Astro!</p>}
+
+        {finished && <p>I finished this tutorial!</p>}
+
         {
-            identity.hobbies.length >= 2 && (
-                <li>
-                    Two of my hobbies are: {identity.hobbies[0]} and{" "}
-                    {identity.hobbies[1]}
-                </li>
+            goal === 3 ? (
+                <p>My goal is to finish in 3 days.</p>
+            ) : (
+                <p>My goal is not 3 days.</p>
             )
         }
-    </ul>
-    <p>My skills are:</p>
-    <ul>
-        {skills.map((skill) => <li class="skill">{skill}</li>)}
-    </ul>
-
-    {happy && <p>I am happy to be learning Astro!</p>}
-
-    {finished && <p>I finished this tutorial!</p>}
-
-    {
-        goal === 3 ? (
-            <p>My goal is to finish in 3 days.</p>
-        ) : (
-            <p>My goal is not 3 days.</p>
-        )
-    }
+    </section>
 </BaseLayout>
 <style define:vars={{ skillColor, fontWeight, textCase }}>
     .skill {
