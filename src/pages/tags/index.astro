@@ -25,16 +25,25 @@ const pageTitle: string = "Tags";
     }
 
     .tags {
-        display: flex;
-        flex-wrap: wrap;
+        padding-top: 0.4rem;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(150px, 1fr));
     }
 
     .tag {
-        margin: 0.25em;
-        border: dotted 1px #a1a1a1;
-        border-radius: 0.5em;
-        padding: 0.5em 1em;
+        background-color: #ff8906;
         font-size: 1.15em;
-        background-color: #f8fcfd;
+        margin: 0.25em;
+        padding: 0.5em 1em;
+        border: solid 1px #fffffe;
+        border-radius: 0.5em;
+        transition: all 0.2s ease-in-out;
+    }
+    .tag a {
+        color: #fffffe;
+    }
+
+    .tag:hover {
+        background-color: #cc6f05;
     }
 </style>
