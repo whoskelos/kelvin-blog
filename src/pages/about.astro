@@ -24,10 +24,6 @@ const skills: string[] = [
     "Tailwind",
 ];
 
-const happy = true;
-const finished = true;
-const goal = 3;
-
 const skillColor = "#e53170";
 const fontWeight = "bold";
 const textCase = "uppercase";
@@ -56,17 +52,8 @@ const textCase = "uppercase";
             {skills.map((skill) => <li class="skill">{skill}</li>)}
         </ul>
 
-        {happy && <p>I am happy to be learning Astro!</p>}
+        <p>I'm always try to keep up to date!</p>
 
-        {finished && <p>I finished this tutorial!</p>}
-
-        {
-            goal === 3 ? (
-                <p>My goal is to finish in 3 days.</p>
-            ) : (
-                <p>My goal is not 3 days.</p>
-            )
-        }
     </section>
 </BaseLayout>
 <style define:vars={{ skillColor, fontWeight, textCase }}>
