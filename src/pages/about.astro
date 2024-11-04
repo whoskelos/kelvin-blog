@@ -1,7 +1,13 @@
 ---
+import { Image } from "astro:assets";
+
 import "../styles/global.css";
 import BaseLayout from "../layouts/BaseLayout.astro";
+
+import aboutImage from "../assets/images/about.webp";
+
 const pageTitle: string = "About Me 🙋🏽‍♂️";
+
 interface Iidentity {
     firstName: string;
     country: string;
@@ -32,6 +38,9 @@ const textCase = "uppercase";
 <BaseLayout pageTitle={pageTitle}>
     <section class="section">
         <h2>Who am I?</h2>
+        <div class="welcome-image-container">
+            <Image src={aboutImage} alt="This is fine meme" loading="lazy" />
+        </div>
         <p>I'm {identity.firstName}</p>
         <p>I born in Ecuador but I live in {identity.country} since 2008</p>
         <p>
