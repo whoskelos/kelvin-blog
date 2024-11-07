@@ -1,13 +1,42 @@
 footer {
-    padding: 1rem 0;
+    padding: 1rem;
 }
 
-footer p {
-    color: #fffffe;
+footer hr {
+    margin-bottom: 1rem;
 }
-footer nav {
+
+footer {
+    text-align: right;
+}
+
+.social-icons {
+    list-style: none;
+    margin: 0;
+    padding: 0;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 1rem;
+    justify-content: flex-end;
+    gap: 18px;
+}
+
+.social-icons a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.social-icons img {
+    width: 25px; /* Adjust the size as needed */
+    height: 25px;
+    transition: opacity 0.3s ease-in;
+}
+
+.social-icons a:hover img {
+    opacity: 0.6;
+}
+
+@media (min-width: 768px) {
+    .social-icons img {
+        width: 30px;
+        height: 30px;
+    }
 }

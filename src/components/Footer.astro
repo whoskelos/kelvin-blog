@@ -1,15 +1,34 @@
 ---
-import Social from "../components/Social.astro";
 import "../styles/footer.css";
+import { Image } from "astro:assets";
+import instagramIcon from "../assets/images/instagram.png";
+import youtubeIcon from "../assets/images/youtube.png";
+import tiktokIcon from "../assets/images/tiktok.png";
+import githubIcon from "../assets/images/github.png";
 ---
 
 <footer>
     <hr />
-    <p>RRSS</p>
-    <nav>
-        <Social platform="instagram" username="codebykelos" />
-        <Social platform="youtube" username="@codebykelos" />
-        <Social platform="tiktok" username="codebykelos" />
-        <Social platform="github" username="whoskelos" />
-    </nav>
+    <ul class="social-icons">
+        <li>
+            <a href="https://www.instagram.com/" target="_blank">
+                <Image src={instagramIcon} alt="Instagram icon" />
+            </a>
+        </li>
+        <li>
+            <a href="https://www.youtube.com/" target="_blank">
+                <Image src={youtubeIcon} alt="youtube icon" />
+            </a>
+        </li>
+        <li>
+            <a href="https://www.tiktok.com/" target="_blank">
+                <Image src={tiktokIcon} alt="tiktok icon" />
+            </a>
+        </li>
+        <li>
+            <a href="https://github.com/" target="_blank">
+                <Image src={githubIcon} alt="github icon" />
+            </a>
+        </li>
+    </ul>
 </footer>
