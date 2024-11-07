@@ -12,7 +12,26 @@ const { pageTitle } = Astro.props;
         <meta charset="utf-8" />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <meta name="viewport" content="width=device-width" />
-        <meta name="generator" content={Astro.generator} />
+        <meta
+            name="description"
+            content="Kelvin Guerrero - Frontend Developer. Welcome to my Blog"
+        />
+        <meta
+            name="keywords"
+            content="Kelvin Guerrero, web developer, JavaScript, HTML, CSS, frontend"
+        />
+        <meta name="author" content="Kelvin Guerrero" />
+        <meta
+            property="og:title"
+            content="Developer blog - Kelvin Guerrero"
+        />
+        <meta
+            property="og:description"
+            content="Welcome! I'm Kelvin Guerrero, come in, take a look 😊"
+        />
+        <meta property="og:image" content="/portada.png" />
+        <meta property="og:url" content="https://blog.kelvinguerrero.dev" />
+        <meta property="og:type" content="website" />
         <title>{pageTitle}</title>
         <ViewTransitions />
     </head>
