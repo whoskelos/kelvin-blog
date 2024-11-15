@@ -1,0 +1,14 @@
+.greeting {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: #ff8906;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.greeting-btn {
+    position: relative;
+    
+}
