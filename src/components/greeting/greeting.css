@@ -1,14 +1,11 @@
 .greeting {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    background: #ff8906;
-    position: absolute;
-    bottom: 0;
-    right: 0;
-}
-
-.greeting-btn {
-    position: relative;
-    
+    position:fixed;
+	width:60px;
+	height:60px;
+	bottom:40px;
+	right:40px;
+	background-color:#ff8906;
+	color:#FFF;
+	border-radius:50px;
+	text-align:center;
 }

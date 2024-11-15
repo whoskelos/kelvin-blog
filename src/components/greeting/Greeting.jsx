@@ -4,10 +4,8 @@ export default function Greeting() {
     const [isOpen, setIsOpen] = useState(false);
 
     return (
-        <div className="greeting">
-            <button className="greeting-btn" onClick={() => setIsOpen(!isOpen)}>
-                New Greeting
-            </button>
-        </div>
+        <button className="greeting" onClick={() => setIsOpen(!isOpen)}>
+            Hi!
+        </button>
     );
 }
