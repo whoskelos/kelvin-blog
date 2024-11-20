@@ -43,9 +43,9 @@ const { pageTitle } = Astro.props;
             <slot />
         </main>
         <Footer />
-        <Greeting client:visible />
         <script>
             import "../scripts/menu.js";
         </script>
+        <Greeting client:visible />
     </body>
 </html>
