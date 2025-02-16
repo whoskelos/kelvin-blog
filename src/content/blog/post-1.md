@@ -4,9 +4,8 @@ title: 'How can I build this blog?'
 pubDate: 2024-11-03
 description: 'In this post you can read How I decide to build this blog'
 author: 'Kelvin Guerrero'
-image:
-    url: 'https://docs.astro.build/assets/rose.webp'
-    alt: 'The Astro logo on a dark background with a pink glow.'
+cover: 'https://docs.astro.build/assets/rose.webp'
+alt: 'The Astro logo on a dark background with a pink glow.'
 tags: ["astro", "blogging", "learning"]
 ---
 
