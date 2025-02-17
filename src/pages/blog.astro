@@ -1,30 +1,25 @@
 ---
-import { Image } from "astro:assets";
+import { getCollection } from "astro:content";
 
-import "../styles/global.css";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import BlogPost from "../components/BlogPost.astro";
 
-import blogImage from "../assets/images/blog.webp";
+import "../styles/global.css";
 
-const allPosts = await Astro.glob("./posts/*.md");
+const allPosts = await getCollection("blog");
 const pageTitle: string = "Some posts 📓";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
     <section class="section">
         <h2>Let's share something</h2>
-        <div class="welcome-image-container">
-            <Image src={blogImage} alt="It guy typing" loading="lazy" />
-        </div>
-        <p>List of posts:</p>
         <!-- TODO: CREATE A POST CARD COMPONENT -->
-        <ul>
+        <div class="posts-list">
             {
                 allPosts.map((post) => (
-                    <BlogPost title={post.frontmatter.title} url={post.url} />
+                    <BlogPost post={post}/>
                 ))
             }
-        </ul>
+        </div>
     </section>
 </BaseLayout>

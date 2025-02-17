@@ -1,19 +1,72 @@
 ---
-const { title, url } = Astro.props;
+import { Image } from 'astro:assets';
+import type { CollectionEntry } from "astro:content";
+
+type Props = {
+    post: CollectionEntry<"blog">;
+}
+
+const { post } = Astro.props;
+const { title, pubDate, cover, alt } = post.data;
+
 ---
 
-<li>
-    <a href={url}>{title}</a>
-</li>
+<article class="post-card">
+    <header>
+        <Image src={cover} alt={alt} width={cover.width} height={cover.height} class="post-card-image" />
+        <time datetime={pubDate.toISOString()}>
+            {
+                pubDate.toLocaleDateString(undefined, {
+                    dateStyle: "medium",
+                    timeZone: "UTC"
+                })
+            }
+        </time>
+    </header>
+    <main>
+        <h3>{title}</h3>
+    </main>
+    <footer class="post-card-footer">
+        <a href={`posts/${post.id}`} class="post-card-btn">Read post</a>
+    </footer>
+</article>
 
 <style>
-    li > a {
-        font-weight: 500;
-        color: #fffffe;
-        transition: all 0.2s ease-in-out;
-    }
+    .post-card {
+        width: 100%;
+        padding: 1.5rem;
+        background: #7065C1;
+        display: grid;
+        grid-template-rows: auto auto 55px;
+        border-radius: .5rem;
+        box-shadow: 0px 0px 20px #7065C2;
+        header .post-card-image {
+            width: 100%;
+            height: auto;
+            aspect-ratio: 4/3;
+            object-fit: cover;
+        }
 
-    li > a:hover {
-        color: #f25f4c;
+        .post-card-footer {
+            padding: 0;
+            display: flex;
+            align-items: end;
+            justify-content: end;
+            
+            .post-card-btn {
+                display: inline-block;
+                background: #0f0e17;
+                padding: .75rem;
+                border-radius: .5rem;
+                justify-self: end;
+                transition: all .2s ease-in-out;
+            }
+
+            .post-card-btn:hover {
+                background: var(---main-gray-dark);
+                color: var(---main-text-color);
+            }
+
+        }
     }
 </style>
