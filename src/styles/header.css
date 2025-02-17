@@ -28,11 +28,11 @@
     width: 40px;
     height: 5px;
     margin-bottom: 10px;
-    background-color: #ff8906;
+    background-color: var(---accent-color);
 }
 
 .nav-links .active {
-    color: #ff8906;
+    color: var(---accent-color);
     font-weight: bold;
 }
 
@@ -40,14 +40,14 @@
     width: 100%;
     top: 5rem;
     left: 48px;
-    background-color: #ff8906;
+    background-color: var(---accent-color);
     display: none;
     margin: 0;
 }
 
 .nav-links a {
     display: block;
-    color: #fffffe;
+    color: var(---main-text-color);
     text-align: center;
     padding: 10px 0;
     text-decoration: none;
@@ -59,7 +59,7 @@
 
 .nav-links a:hover,
 .nav-links a:focus {
-    background-color: #ff8906;
+    background-color: var(---accent-color);
 }
 
 .expanded {
