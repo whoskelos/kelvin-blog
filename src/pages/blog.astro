@@ -1,15 +1,11 @@
 ---
-import { Image } from "astro:assets";
 import { getCollection } from "astro:content";
 
 import BaseLayout from "../layouts/BaseLayout.astro";
 import BlogPost from "../components/BlogPost.astro";
 
-import blogImage from "../assets/images/blog.webp";
-
 import "../styles/global.css";
 
-// const allPosts = await Astro.glob("./posts/*.md");
 const allPosts = await getCollection("blog");
 const pageTitle: string = "Some posts 📓";
 ---

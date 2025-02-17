@@ -1,24 +1,30 @@
 ---
+import { Image } from "astro:assets";
+import { fade } from "astro:transitions";
 import BaseLayout from "./BaseLayout.astro";
 import "../styles/pages.css";
-import { fade } from "astro:transitions";
-const { frontmatter } = Astro.props;
+
+const { data } = Astro.props;
 ---
 
-<BaseLayout pageTitle={frontmatter.title}>
+<BaseLayout pageTitle={data.title}>
     <section class="section">
-        <p>{frontmatter.pubDate.toString().slice(0, 10)}</p>
+        <p>{data.pubDate.toString().slice(0, 10)}</p>
         <p transition:animate={fade({ duration: "300ms" })}>
-            <em>{frontmatter.description}</em>
+            <em>{data.description}</em>
         </p>
-        <p>Written by: {frontmatter.author}</p>
-        <!-- <img src={frontmatter} width="300" alt={frontmatter.image.alt} /> -->
+        <p>Written by: {data.author}</p>
+        <Image src={data.cover} alt={data.alt} width={data.cover.width} height={data.cover.height} />
         <slot />
     </section>
 </BaseLayout>
 
 <style>
     img {
-        aspect-ratio: 16/9;
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        aspect-ratio: 4/3;
+        object-position: center;
     }
 </style>

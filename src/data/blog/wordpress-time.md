@@ -1,5 +1,4 @@
 ---
-layout: ../../layouts/MarkdownPostLayout.astro
 title: 'My first time... using Wordpress'
 pubDate: 2025-02-15
 description: 'Let tell you How I build my first website in Wordpress'
