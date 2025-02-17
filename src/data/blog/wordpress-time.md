@@ -1,7 +1,7 @@
 ---
 title: 'My first time... using Wordpress'
 pubDate: 2025-02-15
-description: 'Let tell you How I build my first website in Wordpress'
+description: 'Let me tell you How I build my first website in Wordpress'
 author: 'Kelvin Guerrero'
 cover: "./blog-images/wordpress_post.webp"
 alt: "CMS Image"
