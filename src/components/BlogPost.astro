@@ -8,7 +8,6 @@ type Props = {
 
 const { post } = Astro.props;
 const { title, pubDate, cover, alt } = post.data;
-
 ---
 
 <article class="post-card">
@@ -27,7 +26,7 @@ const { title, pubDate, cover, alt } = post.data;
         <h3>{title}</h3>
     </main>
     <footer class="post-card-footer">
-        <a href={`/posts/${post.id}`}class="post-card-btn">Read post</a>
+        <a href={`/blog/${post.id}`}class="post-card-btn">Read post</a>
     </footer>
 </article>
 

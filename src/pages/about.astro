@@ -5,6 +5,7 @@ import "../styles/global.css";
 import BaseLayout from "../layouts/BaseLayout.astro";
 
 import aboutImage from "../assets/images/about.webp";
+import SkillCard from "../components/SkillCard.astro";
 
 const pageTitle: string = "About Me 🙋🏽‍♂️";
 
@@ -22,17 +23,13 @@ const identity: Iidentity = {
 };
 
 const skills: string[] = [
-    "HTML",
-    "CSS",
-    "JavaScript",
-    "React",
-    "Astro",
-    "Tailwind",
+    "html",
+    "css",
+    "javascript",
+    "react",
+    "astro",
+    "tailwind",
 ];
-
-const skillColor = "#e53170";
-const fontWeight = "bold";
-const textCase = "uppercase";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
@@ -57,18 +54,19 @@ const textCase = "uppercase";
             }
         </ul>
         <p>My skills are:</p>
-        <ul>
-            {skills.map((skill) => <li class="skill">{skill}</li>)}
-        </ul>
+        <div class="skills">
+            {skills.map((skill) => <SkillCard skill={skill} imgSrc={'/src/assets/icons/'+skill+'.svg'} />)}
+        </div>
 
         <p>I'm always try to keep up to date!</p>
 
     </section>
 </BaseLayout>
-<style define:vars={{ skillColor, fontWeight, textCase }}>
-    .skill {
-        color: var(--skillColor);
-        font-weight: var(--fontWeight);
-        text-transform: var(--textCase);
+<style>
+    .skills {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 24px;
     }
 </style>
