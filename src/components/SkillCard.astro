@@ -1,0 +1,58 @@
+---
+const { skill, imgSrc } = Astro.props;
+---
+
+<article class="skill-card">
+    <div class="skill-card-left">
+        <img src={imgSrc} alt={skill} class="skill-card-img">
+    </div>
+    <div class="skill-card-center">
+        {skill}
+    </div>
+    <div class="skill-card-right">
+        <img src="/src/assets/icons/code.svg" alt="code symbol">
+    </div>
+</article>
+
+<style>
+.skill-card {
+    background: var(---accent-color);
+    width: 100%;
+    height: 70px;
+    display: grid;
+    grid-template-columns: 40px auto auto;
+    align-items: center;
+    gap: 1rem;
+    padding: .75rem 1.2rem;
+    box-shadow: 2px 2px 7px var(---main-gray-light);
+    
+    .skill-card-left {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        span {
+            display: inline-block;
+        }
+        .skill-card-img {
+            width: 35px;
+            height: auto;
+        }
+    }
+    
+    .skill-card-center {
+        align-self: center;
+        font-size: 1.2rem;
+        text-transform: uppercase;
+    }
+
+    .skill-card-right {
+        display: flex;
+        align-items: center;
+        justify-content: end;
+        img {
+            width: 30px;
+            height: auto;
+        }
+    }
+}
+</style>
