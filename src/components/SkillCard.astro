@@ -1,16 +1,22 @@
 ---
+import type { ImageMetadata } from 'astro';
+import { Image } from 'astro:assets';
+
 const { skill, imgSrc } = Astro.props;
+
+import codeSymbol from '../assets/icons/code.svg';
+const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/icons/*.{jpeg,jpg,png,gif,webp,svg}');
 ---
 
 <article class="skill-card">
     <div class="skill-card-left">
-        <img src={imgSrc} alt={skill} class="skill-card-img">
+        <Image src={images[imgSrc]()} alt={skill} class='skill-card-img'/>
     </div>
     <div class="skill-card-center">
         {skill}
     </div>
     <div class="skill-card-right">
-        <img src="/src/assets/icons/code.svg" alt="code symbol">
+        <Image src={codeSymbol} alt='Code symbol icon'>
     </div>
 </article>
 
