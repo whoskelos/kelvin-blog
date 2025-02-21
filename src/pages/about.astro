@@ -26,9 +26,12 @@ const skills: string[] = [
     "html",
     "css",
     "javascript",
-    "react",
     "astro",
     "tailwind",
+];
+
+const learning: string[] = [
+    "react",
 ];
 ---
 
@@ -53,9 +56,13 @@ const skills: string[] = [
                 )
             }
         </ul>
-        <p>My skills are:</p>
+        <p class="subtitle">My skills</p>
         <div class="skills">
             {skills.map((skill) => <SkillCard skill={skill} imgSrc={'/src/assets/icons/'+skill+'.svg'} />)}
+        </div>
+        <p class="subtitle">Learning</p>
+        <div class="learning">
+            {learning.map((skill) => <SkillCard skill={skill} imgSrc={'/src/assets/icons/'+skill+'.svg'} />)}
         </div>
 
         <p>I'm always try to keep up to date!</p>
@@ -63,10 +70,14 @@ const skills: string[] = [
     </section>
 </BaseLayout>
 <style>
-    .skills {
+    .skills, .learning {
         width: 100%;
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
         gap: 24px;
+    }
+    .subtitle {
+        font-size: 24px;
+        font-weight: 500;
     }
 </style>
