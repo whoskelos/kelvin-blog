@@ -4,9 +4,10 @@
   ---main-gray-dark: #353341;
   ---accent-color: #6654EB;
   ---accent-variant-1: #7065C1;
-  ---accent-variant-2: #6D6896;
+  ---accent-variant-2: #    ;
 
   ---main-text-color: #fffffe;
+  ---secondary-text-color: #A7A9BE;
 }
 html {
     background-color: var(---main-color);
@@ -48,7 +49,7 @@ h1 {
 }
 
 p, a, li {
-    color: #a7a9be;
+    color: var(---secondary-text-color);
 }
 
 
