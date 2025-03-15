@@ -22,21 +22,20 @@ const identity: Iidentity = {
     hobbies: ["Gym", "Taste some food", "Travel."],
 };
 
-const skills: string[] = [
-    "html",
-    "css",
-    "javascript",
-    "react",
-    "astro",
-    "tailwind",
-];
+const skills: string[] = ["html", "css", "javascript", "astro", "tailwind"];
+
+const learning: string[] = ["react"];
 ---
 
 <BaseLayout pageTitle={pageTitle}>
     <section class="section">
         <h2>Who am I?</h2>
         <div class="welcome-image-container">
-            <Image src={aboutImage} alt="Ralph from simpsons waving" loading="lazy" />
+            <Image
+                src={aboutImage}
+                alt="Ralph from simpsons waving"
+                loading="lazy"
+            />
         </div>
         <p>I'm {identity.firstName}</p>
         <p>I born in Ecuador but I live in {identity.country} since 2008</p>
@@ -53,20 +52,42 @@ const skills: string[] = [
                 )
             }
         </ul>
-        <p>My skills are:</p>
+        <p class="subtitle">My skills</p>
         <div class="skills">
-            {skills.map((skill) => <SkillCard skill={skill} imgSrc={'/src/assets/icons/'+skill+'.svg'} />)}
+            {
+                skills.map((skill) => (
+                    <SkillCard
+                        skill={skill}
+                        imgSrc={"/src/assets/icons/" + skill + ".svg"}
+                    />
+                ))
+            }
+        </div>
+        <p class="subtitle">Learning</p>
+        <div class="skills">
+            {
+                learning.map((skill) => (
+                    <SkillCard
+                        skill={skill}
+                        imgSrc={"/src/assets/icons/" + skill + ".svg"}
+                        learn={true}
+                    />
+                ))
+            }
         </div>
 
         <p>I'm always try to keep up to date!</p>
-
     </section>
 </BaseLayout>
 <style>
     .skills {
         width: 100%;
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
         gap: 24px;
+    }
+    .subtitle {
+        font-size: 24px;
+        font-weight: 500;
     }
 </style>
