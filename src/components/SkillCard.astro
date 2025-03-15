@@ -2,16 +2,19 @@
 import type { ImageMetadata } from "astro";
 import { Image } from "astro:assets";
 
-const { skill, imgSrc } = Astro.props;
+const { skill, imgSrc, learn = false } = Astro.props;
 
 const images = import.meta.glob<{ default: ImageMetadata }>(
     "/src/assets/icons/*.{jpeg,jpg,png,gif,webp,svg}"
 );
 ---
 
-<article class="skill-card">
+<article class={`skill-card ${learn ? "learn-skill" : ""}`}>
     <Image src={images[imgSrc]()} alt={skill} class="skill-card-img" />
-    <span class={skill === "html" || skill === "css" ? "uppercase" : 'capitalize'}>{skill}</span>
+    <span
+        class={skill === "html" || skill === "css" ? "uppercase" : "capitalize"}
+        >{skill}</span
+    >
 </article>
 
 <style>
@@ -31,7 +34,6 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
             width: 100%;
             height: auto;
         }
-
         span {
             font-size: 18px;
             font-weight: bold;
