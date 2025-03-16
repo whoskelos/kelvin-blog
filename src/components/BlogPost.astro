@@ -64,7 +64,12 @@ const { title, pubDate, cover, alt } = post.data;
             }
 
             .post-card-btn:hover {
-                background: var(---accent-variant-2);
+                background: var(---main-gray-dark);
+                color: var(---main-text-color);
+            }
+
+            .post-card-btn:focus, .post-card-btn:active {
+                outline: 2px solid var(---main-text-color);
                 color: var(---main-text-color);
             }
 
