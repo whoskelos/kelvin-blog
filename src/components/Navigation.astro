@@ -2,11 +2,12 @@
 const { pathname } = Astro.url;
 const currentPath = pathname.slice(1).replace(/\/$/, '');
 const isBlogPath = /^blog(\/.*)?$/;
+const isTagsPath = /^tags(\/.*)?$/;
 ---
 
 <div class="nav-links" transition:animate="slide">
     <a href="/" class={currentPath == "" ? "active" : ""}>Home</a>
     <a href="/about" class={currentPath == "about" ? "active" : ""}>About</a>
     <a href="/blog" class={isBlogPath.test(currentPath) ? "active" : ""}>Blog</a>
-    <a href="/tags" class={currentPath == "tags" ? "active" : ""}>Tags</a>
+    <a href="/tags" class={isTagsPath.test(currentPath) ? "active" : ""}>Tags</a>
 </div>
