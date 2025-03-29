@@ -1,11 +1,11 @@
 ---
 const { pathname } = Astro.url;
-const currentPath = pathname.slice(1);
+const currentPath = pathname.slice(1).replace(/\/$/, '');
 ---
 
 <div class="nav-links" transition:animate="slide">
     <a href="/" class={currentPath == "" ? "active" : ""}>Home</a>
-    <a href="/about" data-current={currentPath} class={currentPath == "about" ? "active" : ""}>About</a>
-    <a href="/blog" data-current={currentPath} class={currentPath == "blog" ? "active" : ""}>Blog</a>
-    <a href="/tags" data-current={currentPath} class={currentPath == "tags" ? "active" : ""}>Tags</a>
+    <a href="/about" class={currentPath == "about" ? "active" : ""}>About</a>
+    <a href="/blog" class={currentPath == "blog" ? "active" : ""}>Blog</a>
+    <a href="/tags" class={currentPath == "tags" ? "active" : ""}>Tags</a>
 </div>
