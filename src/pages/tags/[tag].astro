@@ -26,12 +26,16 @@ const { posts } = Astro.props;
 ---
 
 <BaseLayout pageTitle={tag}>
-    <p>Posts tagged with {tag}</p>
-    <div class="posts-list">
-        {
-            posts.map((post) => (
-                <BlogPost post={post} />
-            ))
-        }
-    </div>
+    <section class="section">
+        <h2>Posts tagged with <span class="tag"><i>{tag}</i></span></h2>
+        <div class="posts-list">
+            {posts.map((post) => <BlogPost post={post} />)}
+        </div>
+    </section>
 </BaseLayout>
+
+<style>
+    span.tag {
+        color: var(---accent-variant-1);
+    }
+</style>
